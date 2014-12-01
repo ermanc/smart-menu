@@ -76,7 +76,7 @@ nav > ul > li:hover > a > .caret {
 border-top-color: rgb( 255, 255, 255 );
 }
 
-nav > ul > li > div {
+nav > ul > li > ul {
 background-color: rgb( 40, 44, 47 );
 border-top: 0;
 border-radius: 0 0 4px 4px;
@@ -95,23 +95,23 @@ visibility: hidden;
 -transition: opacity 0.2s;
 }
 
-nav > ul > li:hover > div {
+nav > ul > li:hover > ul {
 display: block;
 opacity: 1;
 visibility: visible;
 }
 
-nav > ul > li > div ul > li {
+nav > ul > li > ul > li {
 display: block;
 }
 
-nav > ul > li > div ul > li > a {
+nav > ul > li > ul > li > a {
 color: #fff;
 display: block;
 padding: 12px 24px;
 text-decoration: none;
 }
 
-nav > ul > li > div ul > li:hover > a {
+nav > ul > li > ul > li:hover > a {
 background-color: rgba( 255, 255, 255, 0.1);
 }
