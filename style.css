@@ -6,6 +6,10 @@ font-weight: 300;
 font-size: 15px;
 }
 
+iframe {
+  width: 96%;
+}
+
 nav {
 background-color: #fff;
 border: 1px solid #dedede;
@@ -15,7 +19,7 @@ color: #888;
 display: block;
 margin: 8px 22px 8px 22px;
 overflow: hidden;
-width: 90%;
+width: 96%;
 }
 
 nav ul {
