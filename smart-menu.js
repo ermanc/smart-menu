@@ -1,3 +1,7 @@
 $(function() {
-  alert("Hello world!");
+  function createMenu(menuJson) {
+
+  }
+
+  window.smartMenu = createMenu;
 });
