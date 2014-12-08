@@ -1,86 +1,500 @@
-<!DOCTYPE html>
 <html>
-<head>
-<title>A simple website</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+  <head>
+    <title>CSCI 1300: Designing, Developing and Evaluating User Interfaces - Fall 2014</title>
+    <style>
+      body { font-family: Helvetica, Arial, sans-serif; margin: 17px; }
+      p, li, a {font-size: 11pt;}
+      #title {font-size: x-large; margin-bottom: 0;}
+      #subtitle {margin-top: 0px; color: #999; }
+      h1,h2 {font-family: Tahoma, Geneva, Helvetica, Arial, sans-serif; margin-top: 20px;}
+      h2 {font-size: medium; font-weight: bold; margin-bottom: 0px;}
+      h2 + p {margin-top: 6px;}
+      h2 + ul {margin-top: 6px;}
+      h3 {font-weight: bold; font-size: 10pt; margin-bottom: 2px;}
+      a {color: #609;}
+      ul { list-style-type: square;}
+      #attribute {font-size: 8pt;}
+      #attribute a {font-size: 8pt;}
+      table {margin-top: 6px;}
 
-<!-- Dependencies -->
-<script src="underscore.js"></script>
-<script src="jquery.js"></script>
+      thead { font-weight: bold; background-color: #000; color: #fff }
+      table { border-spacing: 0px; border-collapse: collapse; }
+      td { border: 1px solid #ccc; padding: 3px 6px; vertical-align: top;}
+      td, a, li, p {font-size: small; }
+      #skim {background-color: #e3e9cd;}
+      tr.even {background-color: #f2f2f2;}
+      tr.noclass { background-color: #999;}
+      td {text-overflow: ellipsis; max-width: 680px;}
+      .skim {font-style: italic;}
+    </style>
 
-<!-- Smart Menu! -->
-<script src="smart-menu.js"></script>
+    <!--
+      ==========
+      SMART MENU
+      ==========
+    -->
 
-<!-- Using Smart Menu -->
-<script>
-$(function() {
-  smartMenu(
-    "navigation", // id of the container for navigation menu
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    // SmartMenu definition.
-    {
-      "Home": "home.html",
+    <!-- Dependencies -->
+    <script src="underscore.js"></script>
+    <script src="jquery.js"></script>
 
-      "Our Products": {
-        _root: "products.html", // Optional root menu link
+    <!-- Smart Menu! -->
+    <script src="smart-menu.js"></script>
 
-        "Chairs": "chairs.html",
-        "Tables": "tables.html",
-        "Dinnerware": "dinnerware.html",
-        "Cookware": "cookware.html",
-      },
+    <!-- Using Smart Menu -->
+    <script>
+    $(function() {
+      smartMenu(
+        "navigation", // id of the container for navigation menu
 
-      "<< About Us >>": {
-        "Careers": "careers.html",
-        "Contact Us": "careers.html",
-        "Our Vision": "vision.html",
-      }
-    }
-  );
-});
-</script>
+        // SmartMenu definition.
+        {
+          "Home": "index.html",
 
-</head>
-<body>
-  <div id="navigation">
-    <!-- This is where our smart menu will go! -->
+          "Our Products": {
+            _root: "index.html", // Optional root menu link
 
-    <!-- Below is a static pre-rendered menu, in case of errors or blocked javascript -->
-    <nav>
+            "Chairs": "index.html",
+            "Tables": "index.html",
+            "Dinnerware": "index.html",
+            "Cookware": "index.html",
+          },
+
+          "About Us": {
+            "Careers": "index.html",
+            "Contact Us": "index.html",
+            "Our Vision": "index.html",
+          }
+        }
+      );
+    });
+    </script>
+  </head>
+  <body>
+    <div id="navigation">
+      <!-- This is where our smart menu will go! -->
+
+      <!-- Below is a static pre-rendered warning, in case of errors or blocked javascript -->
+      <nav>
+        <ul>
+          <li>
+            <a href="javascript:;">Please enable Javascript for SmartMenu!</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="mainContentWrapper">
+      <h1 id="title">CS 1300: Designing, Developing and Evaluating User Interfaces</h1>
+      <p id="subtitle">Fall 2014</p>
+      <p>This course will cover concepts in human-computer interaction that focus on designing user interfaces. Topics include understanding when to use different interfaces, modeling and representing user interaction, principles of user experience design, eliciting requirements and feedback from users, methods for designing and prototyping interfaces, and user interface evaluation. Classroom time will be spent on lectures and hands-on activities, and students will complete assignments and readings outside the classroom. There will be ten weekly assignments and readings will be from a variety of sources that will be posted during the semester.<br /><br />
+
+      Students interested in learning the process behind building a user interface and gaining hands-on experience designing a user interface should take this course. Programming or web development experience is useful for some assignments, but alternate assignments will be available for those without programming experience. Nearly all course information will be available on the class website. The course is expected to require 6-10 hours / week of work outside class.</p>
+      <h2>Course Time and Location</h2>
+      <p>Location: Salomon 001 (on the College Green, 2 blocks west of CIT)</p>
+      <p>Time: 11:00-11:50am on Mondays, Wednesdays, and Fridays</p>
+      <h2>Instructor</h2>
+      <p><a href="http://jeffhuang.com/">Jeff Huang</a>, 407 CIT, jeff<span style="display:none;">removee</span>&#64<span style="display:okay;">cs</span>.brown.edu</p>
+      <p>Office hours: Wednesdays 12:30pm-2:00pm</p>
+      <h2>Teaching Assistants</h2>
+      <p>Amia Oberai (Head TA)
+      <br>Alex Hadik
+      <br>Brigitte Harder
+      <br>Tauseef Khan
+      <br>Danae Metaxa-Kakavouli
+      <br>Erica Silverstein (Summer only)</p>
+
+      <h2>TA Hours</h2>
+      <p>Monday 8:00-9:00pm Brigitte Harder CIT 271 (Fishbowl)<br>
+      Wednesday 7:00-8:00pm Danae Metaxa-Kakavouli 8:00-9:00pm Tauseef Khan CIT 201<br>
+      Thursday 5:00-6:00pm Amia Oberai CIT 227 (Moonlab)<br>
+            Thursday 7:00-8:00pm Alex Hadik CIT 201</p>
+
+      <p>Email cs130tas<span style="display:none;">removee</span>&#64<span style="display:okay;">lists.cs</span>.brown.edu to reach the TAs and Head TA (most questions should be directed here).
+      <br>Email cs130headtas<span style="display:none;">removee</span>&#64<span style="display:okay;">lists.cs</span>.brown.edu to reach the Head TA and Jeff (e.g. questions about your grade, make up work).
+      <br>Email Jeff for sensitive issues (e.g. feedback about course, disagreement with a TA).</p>
+
+      <h2>Grading</h2>
       <ul>
-        <li>
-          <a href="home.html">Home</a>
-        </li>
-        <li>
-          <a href="products.html">Our Products <span class="caret"></span></a>
-          <ul>
-              <li><a href="chairs.html">Chairs</a>
-              </li>
-              <li><a href="tables.html">Tables</a>
-              </li>
-              <li><a href="dinnerware.html">Dinnerware</a>
-              </li>
-              <li><a href="cookware.html">Cookware</a>
-              </li>
-          </ul>
-        </li>
-        <li>
-          <a href="javascript:;">About Us <span class="caret"></span></a>
-          <ul>
-              <li><a href="careers.html">Careers</a>
-              </li>
-              <li><a href="careers.html">Contact Us</a>
-              </li>
-              <li><a href="vision.html">Our Vision</a>
-              </li>
-          </ul>
-        </li>
+        <li>50% Assignments</li>
+        <li>20% Project</li>
+        <li>10% Reading comments</li>
+        <li>10% In-class quizzes</li>
+        <li>10% Class participation</li>
       </ul>
-    </nav>
-  </div>
 
-  <!-- ArsTechnica in iframe for dummy content -->
-  <iframe src="http://arstechnica.com/"></iframe>
+      <div style="page-break-after:always"></div>
 
-</body>
+      <h2>Schedule</h2>
+
+      <table style="white-space:nowrap;">
+        <thead>
+          <tr>
+            <td>Day</td>
+            <td>Lecture</td>
+            <td>Assignments</td>
+            <td>Readings</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sep 3</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42578131/download?wrap=1">Introduction</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Sep 5</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42632434/download?wrap=1">Overview</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Sep 8</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42669695/download?wrap=1">History</a></td>
+            <td></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42664227/download?wrap=1">Buxton-Input</a> (due Sep 16)</td>
+          </tr>
+          <tr>
+            <td>Sep 10</td>
+            <td>Guest: Prof. Steve Reiss</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Sep 12</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42784078/download?wrap=1">WIMP</a></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42782494/download?wrap=1">Everyday-Interfaces</a> (due Sep 18)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Sep 15</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42817168/download?wrap=1">Output</a></td>
+            <td></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42427314/download?wrap=1">Hinkley-Input</a> (skim by Sep 21)</td>
+          </tr>
+          <tr>
+            <td>Sep 17</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42887353/download?wrap=1">Text Entry</a></td>
+            <td></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42427398/download?wrap=1">Dillman-Questions</a> (due Sep 23)</td>
+          </tr>
+          <tr>
+            <td>Sep 19</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42945175/download?wrap=1">Pointing</a></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42940960/download?wrap=1">No-Clicks</a> or <a href="https://canvas.brown.edu/courses/927780/files/42940956/download?wrap=1">3D-Interactions</a> (due Sep 25)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Sep 22</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43036245/download?wrap=1">Natural</a></td>
+            <td></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42988249/download?wrap=1">Rogers-Users</a> (skim by Sep 28)</td>
+          </tr>
+          <tr>
+            <td>Sep 24</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43125922/download?wrap=1">Gathering</a></td>
+            <td></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42426079/download?wrap=1">Cooper-Personas</a> (due Oct 2)</td>
+          </tr>
+          <tr>
+            <td>Sep 26</td>
+            <td>Class Activity</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43085817/download?wrap=1">Observations</a> (due Oct 2)</td>
+            <td><a href="https://archive.org/details/DesignOfEverydayThings">Norman</a> (skim by Oct 5)</td>
+          </tr>
+          <tr>
+            <td>Sep 29</td>
+            <td>Catchup &amp; <a href="http://depts.washington.edu/agcproj/download/Crossing_Design_Master_Deck.pptx">No-Clicks Examples</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Oct 1</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43185032/download?wrap=1">Analysis</a></td>
+            <td></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42002155/download?wrap=1">Cooper-UndoSave</a> (due Oct 9)</td>
+          </tr>
+          <tr>
+            <td>Oct 3</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43236947/download?wrap=1">Models</a></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43085818/download?wrap=1">Personas</a> (due Oct 9)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Oct 6</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43281731/download?wrap=1">Affordances</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Oct 8</td>
+            <td>Catchup &amp; Class Activity</td>
+            <td></td>
+            <td><a href="http://asktog.com/atc/principles-of-interaction-design/">Tog</a> (optional)</td>
+          </tr>
+          <tr>
+            <td>Oct 10</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43390633/download?wrap=1">Interaction</a></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43386492/download?wrap=1">Sitemap</a> (due Oct 16) </td>
+            <td><a href="http://www.vignelli.com/canon.pdf">Vignelli-Canon</a> (due Oct 16)</td>
+          </tr>
+          <tr>
+            <td>Oct 13</td>
+            <td>No Class (Holiday)</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Oct 15</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43484408/download?wrap=1">Navigation</a></td>
+            <td></td>
+            <td>Design Language <a href="https://developer.apple.com/library/iOS/documentation/userexperience/conceptual/mobilehig/">[A]</a> <a href="http://www.google.com/design/spec/material-design/introduction.html#">[G]</a> <a href="http://msdn.microsoft.com/library/windows/apps/hh781237.aspx">[M]</a> (skim by Oct 21)</td>
+          </tr>
+          <tr>
+            <td>Oct 17</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43523556/download?wrap=1">Graphic Design</a></td>
+            <td>Redesign: <a href="https://canvas.brown.edu/courses/927780/files/43517988/download?wrap=1">Usability</a> or <a href="https://canvas.brown.edu/courses/927780/files/43517991/download?wrap=1">Visual</a> (due Oct 23)</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/42426926/download?wrap=1">Buxton-Sketching</a> (due Oct 23)</td>
+          </tr>
+          <tr>
+            <td>Oct 20</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43585013/download?wrap=1">Typography</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Oct 22</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43635577/download?wrap=1">Interface Design</a></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43635221/download?wrap=1">PROJECT</a> (due Dec 12)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Oct 24</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43736278/download?wrap=1">Sketching</a></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43704142/download?wrap=1">Prototyping</a> (multiple deadlines)</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43487617/download?wrap=1">Kramer</a> and <a href="https://canvas.brown.edu/courses/927780/files/42002046/download?wrap=1">Adams</a> (due Oct 30)</td>
+          </tr>
+          <tr>
+            <td>Oct 27</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43752667/download?wrap=1">Prototyping</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Oct 29</td>
+            <td>Class Activity</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Oct 31</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43838562/download?wrap=1">Emotion</a></td>
+            <td></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43763956/download?wrap=1">Goffman</a> or <a href="http://www.nytimes.com/2013/09/29/magazine/dave-eggers-fiction.html">Eggers</a> (due Nov 9)</td>
+          </tr>
+          <tr>
+            <td>Nov 3</td>
+            <td>Class Activity: Crits-1</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 5</td>
+            <td>Class Activity: Crits-2</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 7</td>
+            <td>Class Activity: Crits-3</td>
+            <td></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43712418/download?wrap=1">Rogers-Evaluation</a> (due Nov 16)</td>
+          </tr>
+          <tr>
+            <td>Nov 10</td>
+            <td>Catchup</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/44038591/download?wrap=1">Development</a> [or Accessibility] (due Nov 30)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 12</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/44077808/download?wrap=1">Social</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 14</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/44141588/download?wrap=1">Usability Testing</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 17</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/44178826/download?wrap=1">Discount Evaluation</a></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/44170409/download?wrap=1">Evaluation</a> or <a href="https://canvas.brown.edu/courses/927780/assignments/5512066">Citi</a> (due Nov 23)</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/43764447/download?wrap=1">Sa-Mobile</a> (due Nov 30)</td>
+          </tr>
+          <tr>
+            <td>Nov 19</td>
+            <td>Class Activity</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 21</td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/44294727/download?wrap=1">Field Evaluation</a></td>
+            <td><a href="https://canvas.brown.edu/courses/927780/files/44295454/download?wrap=1">Accessibility</a> [or Development] (due Nov 30)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 24</td>
+            <td>Project Mentoring (optional)</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 26</td>
+            <td>Supplementary Class (optional)</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nov 28</td>
+            <td>No Class (Holiday)</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Dec 1</td>
+            <td>Guest: Dr. Jessica Tran</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Dec 3</td>
+            <td>Project Presentations</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Dec 5</td>
+            <td>Project Presentations</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Dec 8</td>
+            <td>Project Presentations</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Dec 10</td>
+            <td>Project Presentations</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Skim means to read quickly, focusing on section titles, figures, main points; no reading comments are due. Optional readings are supplementary material, with nothing due or to appear on a quiz.</p>
+
+      <p>Schedule notes: 1) class on November 26 will be supplementary material and there won't be a quiz, 2) the last class will be December 12 or earlier, depending on scheduling for final presentations.</p>
+
+      <p>Slides will be posted here about an hour after class but may be available on Canvas beforehand. Readings and assignments will be posted one week in advance with the due date for reading comments or assignment in parentheses (submit everything to Canvas).</p>
+
+      <h2>Late Policy</h2>
+      <p>Reading comments are due at 11:59pm on the due date listed in the schedule to give a chance for others to read your comment before the next class. No late reading comments will be accepted. Assignments will have 20/100 points deducted from the grade for every week late (rounded up), so an assignment turned in 8 days late will have 40/100 points off. Quizzes are to be completed in the first 10 minutes of class, and not given out after that.</p>
+      <p>Each student gets 3 free excuses that can be used to compensate for missed quizzes, an assignment turned in one week late, some missed in-class activities, or for a missed reading comment. These will be automatically applied at the end of the course. Note that there will be 10 reading comments and quizzes, so each free excuse reimburses 1% of the total course grade. There are no benefits to having extra free excuses when the semester ends. Any further accomodation requires a note from the Dean of the College sent to the Head TA contact email.</p>
+
+      <h2>Collaboration Policy</h2>
+      <p>The Collaboration Policy can be found <a href="1300-collaboration-policy.pdf">here</a>. You have give the form to a TA before we can grade your work.</p>
+
+      <div style="page-break-after:always"></div>
+
+      <h2>Topics</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <td>
+              Week
+            </td>
+            <td>
+              Topic
+            </td>
+        </thead>
+        <tbody>
+          <tr class="odd">
+            <td>Week 1</td>
+            <td><h3>Introduction</h3>
+            We start with an overview of the course, and highlight challenges in designing user interfaces.</td>
+          </tr>
+          <tr class="even">
+            <td>Week 2</td>
+            <td><h3>Interfaces Basics</h3>
+            We'll learn how we arrived at the traditional desktop interface, and the desktop metaphors the shaped the way many people use computers today.</td>
+          </tr>
+          <tr class="odd">
+            <td>Week 3</td>
+            <td><h3>Input Techniques</h3>
+            We will dive into the details of computer input and direct manipulation to explore performance and human motor capabilities, and find out there's more to the mouse, keyboard, and touchscreen than meets the eye.</td>
+          </tr>
+          <tr class="even">
+            <td>Week 4</td>
+            <td><h3>Understanding Users</h3>
+            To find out what users desire from an interface, we must first use techniques to gather data about how they might use it, and the interpret this data.</td>
+          </tr>
+          <tr class="odd">
+            <td>Week 5</td>
+            <td><h3>User-Centered Design</h3>
+            Users become the center focus as we look at how to design for them from beginning to end.</td>
+          </tr>
+          <tr class="even">
+            <td>Week 6</td>
+            <td><h3>Interaction Design</h3>
+            We look beyond just the interface to learn about the process of interaction design that involves modeling and representing users.</td>
+          </tr>
+          <tr class="odd">
+            <td>Week 7</td>
+            <td><h3>Visual Design</h3>
+            We learn about fundamental principles of designing graphical user interfaces.</td>
+          </tr>
+          <tr class="even">
+            <td>Week 8</td>
+            <td><h3>Prototyping</h3>
+            We look at low-fidelity and high-fidelity prototyping as ways to iteratively improve the design of the interface.</td>
+          </tr>
+          <tr class="odd">
+            <td>Week 9</td>
+            <td><h3>Crits</h3>
+            This week involves an in-class activity where we get practice critiquing each others' interfaces using the traditional design crit process.</td>
+          </tr>
+          <tr class="even">
+            <td>Week 10</td>
+            <td><h3>Social and Emotional Design</h3>
+            How does social behavior affect the interactions people have with interfaces? How do interfaces appeal to the emotional nature of users?</td>
+          </tr>
+          <tr class="odd">
+            <td>Week 11</td>
+            <td><h3>Usability Evaluation</h3>
+            We learn about both formal and informal methods of evaluating user interfaces, including usability testing and user-free evaluation methods.</td>
+          </tr>
+          <tr class="even">
+            <td>Week 12</td>
+            <td><h3>Accessibility</h3>
+            We explore issues surrounding making interfaces more accessible.</td>
+          </tr>
+          <tr class="odd">
+            <td>Week 13</td>
+            <td><h3>Project Presentations</h3>
+            Students present their final projects in class.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>

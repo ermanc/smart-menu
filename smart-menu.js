@@ -10,21 +10,28 @@
   function createSubmenu(menuJson, parents) {
     var ul = $("<ul>");
 
+    var elems = [];
+
     _.each(menuJson, function(value, key) {
       if (key === "_root") return; // special key, used for parent, ignore here.
 
       if (typeof value !== "string")
-        ul.append(
+        elems.push([
+          getSelectionCount(getLinkId(parents, key)),
           createLinkElement(parents, key, value._root, true)
             .append(createSubmenu(value, parents.concat(key)))
-        ); //submenu
+        ]); //submenu
       else
-        ul.append(
+        elems.push([
+          getSelectionCount(getLinkId(parents, key)),
           createLinkElement(parents, key, value, false)
-        ); // link
+        ]); // link
     });
 
-    return ul;
+    // Order by simple popularity (click count)
+    elems.sort(function(a, b) { return b[0] - a[0]; });
+
+    return ul.append(_.map(elems, function(e) { return e[1]; }));
   }
 
   function createLinkElement(parents, text, href, submenu) {
@@ -51,7 +58,7 @@
 
       handleClickOn(text, parents);
 
-      return false;
+      // return false;
     });
   }
 
