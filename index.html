@@ -3,34 +3,84 @@
 <head>
 <title>A simple website</title>
 <link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Dependencies -->
+<script src="underscore.js"></script>
+<script src="jquery.js"></script>
+
+<!-- Smart Menu! -->
+<script src="smart-menu.js"></script>
+
+<!-- Using Smart Menu -->
+<script>
+$(function() {
+  smartMenu(
+    "navigation", // id of the container for navigation menu
+
+    // SmartMenu definition.
+    {
+      "Home": "home.html",
+
+      "Our Products": {
+        _root: "products.html", // Optional root menu link
+
+        "Chairs": "chairs.html",
+        "Tables": "tables.html",
+        "Dinnerware": "dinnerware.html",
+        "Cookware": "cookware.html",
+      },
+
+      "<< About Us >>": {
+        "Careers": "careers.html",
+        "Contact Us": "careers.html",
+        "Our Vision": "vision.html",
+      }
+    }
+  );
+});
+</script>
+
 </head>
 <body>
-  <div id="header"></div>
+  <div id="navigation">
+    <!-- This is where our smart menu will go! -->
 
-  <nav>
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li>
-        <a href="products.html">Products <span class="caret"></span></a>
-        <ul>
-          <li><a href="products.html#chair">Chair</a></li>
-          <li><a href="products.html#table">Table</a></li>
-          <li><a href="cooker.html">Cooker</a></li>
-        </ul>
-      </li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="help.html">Help</a></li>
-    </ul>
-  </nav>
+    <!-- Below is a static pre-rendered menu, in case of errors or blocked javascript -->
+    <nav>
+      <ul>
+        <li>
+          <a href="home.html">Home</a>
+        </li>
+        <li>
+          <a href="products.html">Our Products <span class="caret"></span></a>
+          <ul>
+              <li><a href="chairs.html">Chairs</a>
+              </li>
+              <li><a href="tables.html">Tables</a>
+              </li>
+              <li><a href="dinnerware.html">Dinnerware</a>
+              </li>
+              <li><a href="cookware.html">Cookware</a>
+              </li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:;">About Us <span class="caret"></span></a>
+          <ul>
+              <li><a href="careers.html">Careers</a>
+              </li>
+              <li><a href="careers.html">Contact Us</a>
+              </li>
+              <li><a href="vision.html">Our Vision</a>
+              </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
+  <!-- ArsTechnica in iframe for dummy content -->
   <iframe src="http://arstechnica.com/"></iframe>
 
-  <script src="underscore.js"></script>
-  <script src="jquery.js"></script>
-  <script src="smart-menu.js"></script>
-
-  <script>
-
-  </script>
 </body>
 </html>
