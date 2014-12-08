@@ -38,7 +38,8 @@
     var link = $("<a>")
       .on("click")
       .attr("href", getHref(href))
-      .html(getSelectionCount(getLinkId(parents, text)) + " - " + text +
+      .html( (window.smartMenuDebug ? getSelectionCount(getLinkId(parents, text)) + " - " : "") +
+        text +
         (submenu ? " <span class='caret'></a></li>" : "")
       );
 
